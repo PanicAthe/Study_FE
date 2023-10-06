@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            .form-hide{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="container my-5 form-group">
+            <p>상품선택</p>
+            <select class="form-select mt-2">
+              <option>모자</option>
+              <option>셔츠</option>
+            </select>
+            <select class="form-select mt-2 form-hide">
+                <option>95</option>
+                <option>100</option>
+              </select>
+        </form>
+
+        <script>
+            $('.form-select')
+                .eq(0)
+                .on('input', function(){
+                    if($('.form-select').eq(0).val() == '셔츠'){
+                        $('.form-select').eq(1).removeClass('form-hide');
+                    }
+                });
+        </script>
+
+        <div class="card-group container">
+            <div class="card">
+                <img src="https://via.placeholder.com/600" />
+                <div class="card-body">
+                    <h5 id="title0">Card title</h5>
+                    <p id = "price0">가격 : 70000</p>
+                    <button class="btn btn-danger">주문하기</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/600" />
+                <div class="card-body">
+                    <h5 id="title1">Card title</h5>
+                    <p id = "price1">가격 : 70000</p>
+                    <button class="btn btn-danger">주문하기</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/600" />
+                <div class="card-body">
+                    <h5 id="title1">Card title</h5>
+                    <p id = "price1">가격 : 70000</p>
+                    <button class="btn btn-danger">주문하기</button>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            let products = [
+                { id: 0, price: 70000, title: 'Blossom Dress' },
+                { id: 1, price: 50000, title: 'Springfield Shirt' },
+                { id: 2, price: 60000, title: 'Black Monastery' },
+            ];
+    
+            let titles = document.querySelectorAll('.card-body h5');
+            let prices = document.querySelectorAll('.card-body p');
+    
+            for(var i=0; i<titles.length; i++) {
+                titles[i].innerHTML = products[i].title;
+                prices[i].innerHTML = '가격 : ' + products[i].price;
+            }
+        </script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

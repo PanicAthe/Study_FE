@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <style>
+            ul.list {
+                margin: 0;
+                padding: 0;
+                border-bottom: 1px solid #ccc;
+                display: flex;
+            }
+
+            .tab-button {
+                display: block;
+                padding: 10px 20px 10px 20px;
+                float: left;
+                margin-right: -1px;
+                margin-bottom: -1px;
+                color: grey;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            .orange {
+                border-top: 2px solid orange;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid white;
+                border-left: 1px solid #ccc;
+                color: black;
+                margin-top: -2px;
+            }
+            .tab-content {
+                display: none;
+                padding: 10px;
+            }
+            .show {
+                display: block;
+            }
+        </style>
+
+
+        <div class="container mt-5">
+            <ul class="list">
+                <li class="tab-button" data-id="0">Products</li>
+                <li class="tab-button"  data-id="1">Information</li>
+                <li class="tab-button"  data-id="2" >Shipping</li>
+              
+            </ul>
+            <div class="tab-content show">
+                <p>상품설명입니다. Product</p>
+            </div>
+            <div class="tab-content">
+                <p>하하</p>
+            </div>
+            <div class="tab-content">
+                <p>배송정보입니다. Shipping</p>
+            </div>
+            <div class="tab-content">
+                <p>배송정보입니다. Shipping</p>
+            </div>
+        </div>
+
+        <script>
+
+            const 버튼 = $('.tab-button');
+            const 콘텐트 = $('.tab-content');
+
+            function 탭열기(i){
+                버튼.removeClass('orange');
+                버튼.eq(i).addClass('orange');
+                콘텐트.removeClass('orange');
+                콘텐트.eq(i).addClass('orange');
+            }
+
+            $('.list').click(function(e){
+                탭열기(e.target.dataset.id);
+            })
+           
+        </script>
+    </body>
+</html>
