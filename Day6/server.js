@@ -19,12 +19,13 @@ catch((err) => {
 
 // public 폴더 연결 코드
 app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'ejs');
 
 app.get('/', (요청, 응답) => {
     응답.sendFile(__dirname + '/index.html');
 });
 
 app.get('/list', async(요청, 응답)=>{
-    let result = await db.collection('post').find().toArray()
-    응답.send(result);
+    //let result = await db.collection('post').find().toArray()
+    응답.render('board.ejs', { 목록: result });
 })
