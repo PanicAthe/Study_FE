@@ -1,0 +1,65 @@
+.nav {
+    display: flex;
+    padding: 20px;
+    background: black;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.nav ul > li {
+    color: white;
+    margin-right: 30px;
+    list-style: none;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.background {
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    margin: 30px;
+}
+
+.list {
+    padding: 20px;
+    margin: 20px;
+    border-bottom: 1px solid;
+}
+
+input {
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.form-container button {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: lightslategray;
+    border: none;
+}
+
+.detail-background {
+    background-color: tan;
+    padding: 20px;
+    margin-top: 2rem;
+}

@@ -1,0 +1,21 @@
+nav{
+    background: black;
+}
+
+.nav_ul {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+}
+
+.nav_ul > li {
+    margin-right: 10px;
+    list-style: none;
+    color: white;
+}
+
+.nav_ul_li {
+    font-size: 20px;
+    font-weight: bold;
+}

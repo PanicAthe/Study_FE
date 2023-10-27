@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row"></div>
+    </div>
+    <div class="container">
+        <button class="btn btn-danger" id="more">더보기</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const products = [
+            { id: 0, price: 70000, title: 'Blossom Dress' },
+            { id: 1, price: 50000, title: 'Springfield Shirt' },
+            { id: 2, price: 60000, title: 'Black Monastery' },
+        ];
+
+        products.forEach((a, i) => {
+            const 템플릿 = `
+            <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100" />
+                <h5>${products[i].title}</h5>
+                <p>가격 : ${products[i].price}</p>
+            </div>
+            `;
+            $('.row').append(템플릿);
+        });
+
+        $('#more').click(function () {
+            $.get('https://dhcoding89.github.io/Incheon/shop.json').done((data) => {
+                console.log(data);
+
+                data.forEach((a, i) => {
+                    const 템플릿2 = `<div class="col-sm-4">
+                    <img src="https://via.placeholder.com/600" class="w-100" />
+                    <h5>${data[i].title}</h5>
+                    <p>가격 : ${data[i].price}</p>
+                </div>
+                `;
+                    $('.row').append(템플릿2);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
