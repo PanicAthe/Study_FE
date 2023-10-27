@@ -20,3 +20,6 @@
     
 * 부츠스트랩 (Bootstrap)
     >Twitter에서 시작된 오픈 소스 프로젝트로, 웹 페이지와 웹 애플리케이션을 빠르고 쉽게 개발하기 위해 사용되는 프런트엔드 프레임워크입니다. CSS, HTML, JavaScript로 구성
+
+
+**Day6는 install node 해주고 시작**
